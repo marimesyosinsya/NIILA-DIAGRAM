@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ダイアグラム一覧</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .transport-section {
+      margin-bottom: 40px;
+    }
+
+    .transport-title {
+      font-size: 24px;
+      color: #007acc;
+      border-bottom: 2px solid #007acc;
+      margin-bottom: 10px;
+    }
+
+    .company {
+      margin-bottom: 20px;
+      padding: 10px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .company-name {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .route {
+      margin-left: 10px;
+      cursor: pointer;
+      padding: 5px;
+      border-left: 4px solid #007acc;
+    }
+
+    .route:hover {
+      background: #e0f7ff;
+    }
+
+    .details {
+      display: none;
+      margin-left: 20px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-left: 2px dotted #ccc;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>各社ダイアグラム表示サイト</h1>
+
+  <div class="transport-section" id="plane">
+    <div class="transport-title">✈ 飛行機</div>
+    <div class="company">
+      <div class="company-name">航空会社A</div>
+      <div class="route" onclick="toggleDetails(this)">羽田 - 福岡線
+        <div class="details">6:00 / 8:00 / 10:00 / 12:00</div>
+      </div>
+      <div class="route" onclick="toggleDetails(this)">成田 - 札幌線
+        <div class="details">7:00 / 9:00 / 11:00 / 13:00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transport-section" id="shinkansen">
+    <div class="transport-title">🚄 新幹線</div>
+    <div class="company">
+      <div class="company-name">新幹線会社B</div>
+      <div class="route" onclick="toggleDetails(this)">東京 - 新大阪線
+        <div class="details">6:10 / 7:30 / 9:00 / 11:20</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transport-section" id="ship">
+    <div class="transport-title">⛴ 船</div>
+    <div class="company">
+      <div class="company-name">フェリー会社C</div>
+      <div class="route" onclick="toggleDetails(this)">大阪 - 鹿児島航路
+        <div class="details">18:00出港 → 翌日9:00到着</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDetails(route) {
+      const detail = route.querySelector('.details');
+      detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
