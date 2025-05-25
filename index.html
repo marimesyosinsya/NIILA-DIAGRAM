@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ダイアグラム一覧</title>
+  <title>ダイアグラムサイト</title>
   <style>
     body {
       font-family: sans-serif;
@@ -59,31 +59,110 @@
       border-left: 2px dotted #ccc;
       margin-top: 5px;
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background: #eee;
+    }
   </style>
 </head>
 <body>
 
-  <h1>各社ダイアグラム表示サイト</h1>
-
-  <div class="transport-section" id="plane">
-    <div class="transport-title">✈ 飛行機</div>
-    <div class="company">
-      <div class="company-name">航空会社A</div>
-      <div class="route" onclick="toggleDetails(this)">羽田 - 福岡線
-        <div class="details">6:00 / 8:00 / 10:00 / 12:00</div>
-      </div>
-      <div class="route" onclick="toggleDetails(this)">成田 - 札幌線
-        <div class="details">7:00 / 9:00 / 11:00 / 13:00</div>
-      </div>
-    </div>
-  </div>
+  <h1>ダイアグラム時刻表示サイト</h1>
 
   <div class="transport-section" id="shinkansen">
     <div class="transport-title">🚄 新幹線</div>
     <div class="company">
       <div class="company-name">新幹線会社B</div>
       <div class="route" onclick="toggleDetails(this)">東京 - 新大阪線
-        <div class="details">6:10 / 7:30 / 9:00 / 11:20</div>
+        <div class="details">
+          <strong>各駅停車時刻表：</strong>
+          <table>
+            <thead>
+              <tr>
+                <th>駅名</th>
+                <th>到着時刻</th>
+                <th>出発時刻</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>東京</td>
+                <td>--</td>
+                <td>06:00</td>
+              </tr>
+              <tr>
+                <td>品川</td>
+                <td>06:10</td>
+                <td>06:12</td>
+              </tr>
+              <tr>
+                <td>新横浜</td>
+                <td>06:25</td>
+                <td>06:27</td>
+              </tr>
+              <tr>
+                <td>名古屋</td>
+                <td>07:10</td>
+                <td>07:15</td>
+              </tr>
+              <tr>
+                <td>京都</td>
+                <td>07:50</td>
+                <td>07:52</td>
+              </tr>
+              <tr>
+                <td>新大阪</td>
+                <td>08:10</td>
+                <td>--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="transport-section" id="plane">
+    <div class="transport-title">✈ 飛行機</div>
+    <div class="company">
+      <div class="company-name">航空会社A</div>
+      <div class="route" onclick="toggleDetails(this)">羽田 - 福岡線
+        <div class="details">
+          <strong>フライトスケジュール：</strong>
+          <table>
+            <thead>
+              <tr>
+                <th>空港</th>
+                <th>到着時刻</th>
+                <th>出発時刻</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>羽田</td>
+                <td>--</td>
+                <td>08:00</td>
+              </tr>
+              <tr>
+                <td>福岡</td>
+                <td>09:40</td>
+                <td>--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -93,7 +172,35 @@
     <div class="company">
       <div class="company-name">フェリー会社C</div>
       <div class="route" onclick="toggleDetails(this)">大阪 - 鹿児島航路
-        <div class="details">18:00出港 → 翌日9:00到着</div>
+        <div class="details">
+          <strong>寄港地情報：</strong>
+          <table>
+            <thead>
+              <tr>
+                <th>港名</th>
+                <th>到着時刻</th>
+                <th>出発時刻</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>大阪南港</td>
+                <td>--</td>
+                <td>18:00</td>
+              </tr>
+              <tr>
+                <td>高知</td>
+                <td>23:00</td>
+                <td>23:30</td>
+              </tr>
+              <tr>
+                <td>鹿児島港</td>
+                <td>09:00</td>
+                <td>--</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
